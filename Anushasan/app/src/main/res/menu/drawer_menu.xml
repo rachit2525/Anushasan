@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+          <item android:id="@+id/nav_subj"
+              android:icon="@drawable/ic_subjects"
+              android:title="Schedule"
+              />
+            <item android:id="@+id/nav_project"
+                android:icon="@drawable/ic_project"
+                android:title="Projects"
+                />
+        <item android:id="@+id/nav_assignment"
+            android:icon="@drawable/ic_assignments"
+            android:title="Assignment"
+            />
+
+    </group>
+
+       <item android:title="Communicate">
+           <menu>
+               <item android:id="@+id/nav_help"
+                   android:icon="@drawable/ic_helping"
+                   android:title="Help Desk"/>
+           </menu>
+
+       </item>
+
+
+
+</menu>
