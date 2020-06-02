@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProjectActivity"></activity>
+        <activity android:name=".SaturdayActivity"></activity>
+        <activity android:name=".FridayActivity" />
+        <activity android:name=".ThursdayActivity" />
+        <activity android:name=".WednesdayActivity" />
+        <activity android:name=".TuesdayActivity" />
+        <activity android:name=".MondayActivity" />
+        <activity android:name=".ProjectActivity" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">

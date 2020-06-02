@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if(savedInstanceState == null){
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new SubjectFragment()).commit();
+                    new ScheduleFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_subj);
         }
     }
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (menuItem.getItemId()){
             case R.id.nav_subj:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new SubjectFragment()).commit();
+                        new ScheduleFragment()).commit();
                 break;
 
             case R.id.nav_project:

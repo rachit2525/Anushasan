@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="colors" translatable="false">
+        <item>#99cc00</item>
+        <item>#7b68ee</item>
+        <item>#0000cd</item>
+        <item>#3cb371</item>
+        <item>#b8860b</item>
+        <item>#ffa07a</item>
+        <item>#f08080</item>
+        <item>#99cc00</item>
+        <item>#9400d3</item>
+        <item>#9370db</item>
+        <item>#ff1493</item>
+        <item>#556b2f</item>
+        <item>#000080</item>
+
+    </string-array>
+
+    <string-array name="Week">
+        <item> MONDAY </item>
+        <item> TUESDAY </item>
+        <item> WEDNESDAY </item>
+        <item> THURSDAY </item>
+        <item> FRIDAY </item>
+        <item> SATURDAY </item>
+
+
+    </string-array>
+
+</resources>

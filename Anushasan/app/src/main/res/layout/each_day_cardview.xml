@@ -1,0 +1,33 @@
+<androidx.cardview.widget.CardView android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:background="@color/colorAccent"
+    android:elevation="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <com.example.anushasan.utility.LetterImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/days_LetterImageView"
+            android:layout_margin="10dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/days_textView"
+            android:textStyle="bold"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="6dp"
+            android:layout_centerVertical="true"
+            android:text="MONDAY"
+            android:layout_toRightOf="@+id/days_LetterImageView"
+            android:textSize="36sp"
+            />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
