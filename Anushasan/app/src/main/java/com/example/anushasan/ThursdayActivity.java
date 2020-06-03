@@ -26,7 +26,7 @@ public class ThursdayActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId() == R.id.add_subject)
+        if(item.getItemId() == R.id.add_subject_menu)
             Toast.makeText(this, "Add a subject", Toast.LENGTH_SHORT).show();
         return super.onOptionsItemSelected(item);
     }
