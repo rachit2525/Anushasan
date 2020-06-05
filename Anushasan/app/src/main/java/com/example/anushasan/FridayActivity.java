@@ -6,7 +6,11 @@ import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -20,6 +24,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class FridayActivity extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener {
 
@@ -33,6 +38,8 @@ public class FridayActivity extends AppCompatActivity implements TimePickerDialo
     private RecyclerView mRecyclerView;
     private SubjectAddAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    int REQUEST_CODE_FOR_EACH_SUBJECT = 1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +65,7 @@ public class FridayActivity extends AppCompatActivity implements TimePickerDialo
         addSubjectButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //REQUEST_CODE_FOR_EACH_SUBJECT++;
                 String subNAME = subjectEditText.getText().toString();
                 String subTIME = timeTextView.getText().toString();
                 if(subNAME.length()>=1) {
@@ -79,10 +87,8 @@ public class FridayActivity extends AppCompatActivity implements TimePickerDialo
 
     private void createSubjectCardItemArrayList() {
         subjectCardItemArrayList = new ArrayList<>();
-        subjectCardItemArrayList.add(new SubjectCardItem("Computer Organization",
-                "9:00"));
-        subjectCardItemArrayList.add(new SubjectCardItem("Automata",
-                "10:00"));
+        //subjectCardItemArrayList.add(new SubjectCardItem("Computer Organization","9:00"));
+        //subjectCardItemArrayList.add(new SubjectCardItem("Automata", "10:00"));
 //        subjectCardItemArrayList.add(new SubjectCardItem("graph","10:00"));
 //        subjectCardItemArrayList.add(new SubjectCardItem("automata lab","10:00"));
 //        subjectCardItemArrayList.add(new SubjectCardItem("shell lab","10:00"));
@@ -122,6 +128,28 @@ public class FridayActivity extends AppCompatActivity implements TimePickerDialo
         //if() we can play with adding AM and PM to classes and same for hours also //////////////////////
         String timeSet = hourOfDay+":"+minuteString;
         timeTextView.setText(timeSet);
+
+        // yahan notification de rha
+        Calendar mCalender = Calendar.getInstance();
+        mCalender.set(Calendar.HOUR_OF_DAY,hourOfDay);
+        mCalender.set(Calendar.MINUTE,minute);
+        mCalender.set(Calendar.SECOND,0);
+        mCalender.set(Calendar.MILLISECOND,0);
+
+        startAlarm(mCalender);
+
+    }
+
+    private void startAlarm(Calendar mCalender) {
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(this, AlertReceiver.class);
+        intent.putExtra("time",timeTextView.getText().toString());
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, REQUEST_CODE_FOR_EACH_SUBJECT, intent, 0);
+        if (mCalender.before(Calendar.getInstance())) {
+            mCalender.add(Calendar.MINUTE, 1);
+        }
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, mCalender.getTimeInMillis(),
+                AlarmManager.INTERVAL_FIFTEEN_MINUTES/15*2, pendingIntent);
     }
 
     @Override
