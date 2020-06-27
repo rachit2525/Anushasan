@@ -32,13 +32,15 @@ public class FridayActivity extends AppCompatActivity implements TimePickerDialo
     private Button addSubjectButton;
     private TextView timeTextView;
     private EditText subjectEditText;
+    private EditText subjectNumber;
+
 
     ArrayList<SubjectCardItem> subjectCardItemArrayList;
 
     private RecyclerView mRecyclerView;
     private SubjectAddAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    int REQUEST_CODE_FOR_EACH_SUBJECT = 1;
+    public static int REQUEST_CODE_FOR_EACH_SUBJECT = 1 ;
 
 
     @Override
@@ -50,6 +52,7 @@ public class FridayActivity extends AppCompatActivity implements TimePickerDialo
         addSubjectButton = (Button) findViewById(R.id.addSubjectButton);
         timeTextView = (TextView) findViewById(R.id.timeTextView);
         subjectEditText = (EditText) findViewById(R.id.subjectEditText);
+        subjectNumber = (EditText) findViewById(R.id.subjectNumber);
 
         timePickerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,14 +68,15 @@ public class FridayActivity extends AppCompatActivity implements TimePickerDialo
         addSubjectButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //REQUEST_CODE_FOR_EACH_SUBJECT++;
+                REQUEST_CODE_FOR_EACH_SUBJECT++;
                 String subNAME = subjectEditText.getText().toString();
                 String subTIME = timeTextView.getText().toString();
+//                REQUEST_CODE_FOR_EACH_SUBJECT = Integer.parseInt(subjectNumber.getText().toString());
                 if(subNAME.length()>=1) {
                     insertSubjectItem(subNAME, subTIME);
                 }
                 else
-                    Toast.makeText(FridayActivity.this, "Please enter a valid Subject Name", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FridayActivity.this, "Please enter- a valid Subject Name", Toast.LENGTH_SHORT).show();
                 subjectEditText.setText("");
                 timeTextView.setText("00:00");
             }
@@ -87,8 +91,8 @@ public class FridayActivity extends AppCompatActivity implements TimePickerDialo
 
     private void createSubjectCardItemArrayList() {
         subjectCardItemArrayList = new ArrayList<>();
-        //subjectCardItemArrayList.add(new SubjectCardItem("Computer Organization","9:00"));
-        //subjectCardItemArrayList.add(new SubjectCardItem("Automata", "10:00"));
+//        subjectCardItemArrayList.add(new SubjectCardItem("Computer Organization","9:00"));
+//        subjectCardItemArrayList.add(new SubjectCardItem("Automata", "10:00"));
 //        subjectCardItemArrayList.add(new SubjectCardItem("graph","10:00"));
 //        subjectCardItemArrayList.add(new SubjectCardItem("automata lab","10:00"));
 //        subjectCardItemArrayList.add(new SubjectCardItem("shell lab","10:00"));
@@ -143,13 +147,13 @@ public class FridayActivity extends AppCompatActivity implements TimePickerDialo
     private void startAlarm(Calendar mCalender) {
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this, AlertReceiver.class);
-        intent.putExtra("time",timeTextView.getText().toString());
+        intent.putExtra("time",subjectEditText.getText().toString());
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, REQUEST_CODE_FOR_EACH_SUBJECT, intent, 0);
         if (mCalender.before(Calendar.getInstance())) {
             mCalender.add(Calendar.MINUTE, 1);
         }
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, mCalender.getTimeInMillis(),
-                AlarmManager.INTERVAL_FIFTEEN_MINUTES/15*2, pendingIntent);
+                AlarmManager.INTERVAL_FIFTEEN_MINUTES/5, pendingIntent);
     }
 
     @Override
