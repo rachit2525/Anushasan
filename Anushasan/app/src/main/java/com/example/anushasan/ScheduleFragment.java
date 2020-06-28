@@ -53,7 +53,7 @@ public class ScheduleFragment extends Fragment {
                         startActivity(intent);
                         break;
                     case 1:
-                        Toast.makeText(getContext(), "Tuesday", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "TuesdayContract", Toast.LENGTH_SHORT).show();
                         intent = new Intent(getActivity(),TuesdayActivity.class);
                         startActivity(intent);
                         break;
