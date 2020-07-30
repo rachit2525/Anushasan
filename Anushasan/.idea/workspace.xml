@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="37cb0b00-87bd-4bd8-87ac-20a3a214e82e" name="Default Changelist" comment="" />
+    <list default="true" id="e9e7463c-9e37-4422-b993-ae4fb615f715" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3_XL_API_27" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="c59bf446" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -21,11 +29,32 @@
       </state>
     </system>
   </component>
-  <component name="ProjectId" id="1dwnrAOJTwri7FKpfEh9AnOGgAQ" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1eIYX8gMRXwEdPylUzq1k7mvyDe" />
   <component name="PropertiesComponent">
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_3_XL_API_27" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-07-16T14:50:50.261Z" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="project.structure.last.edited" value="SDK Location" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="RecentsManager">
+    <key name="android.template.packageName">
+      <recent name="com.example.anushasan" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Rachit\Music\Anushasan\app\src\main\res\drawable" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -104,11 +133,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="37cb0b00-87bd-4bd8-87ac-20a3a214e82e" name="Default Changelist" comment="" />
-      <created>1593345219008</created>
+      <changelist id="e9e7463c-9e37-4422-b993-ae4fb615f715" name="Default Changelist" comment="" />
+      <created>1594010611030</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1593345219008</updated>
+      <updated>1594010611030</updated>
     </task>
     <servers />
   </component>

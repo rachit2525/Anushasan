@@ -1,19 +1,19 @@
 package com.example.anushasan;
 
 public class SubjectCardItem {
-    private String SubjectName;
-    private String SubjectTime;
+	private String SubjectName;
+	private String SubjectTime;
 
-    public SubjectCardItem(String subjectName, String subjectTime) {
-        SubjectName = subjectName;
-        SubjectTime = subjectTime;
-    }
+	public SubjectCardItem(String subjectName, String subjectTime) {
+		SubjectName = subjectName;
+		SubjectTime = subjectTime;
+	}
 
-    public String getSubjectName() {
-        return SubjectName;
-    }
+	public String getSubjectName() {
+		return SubjectName;
+	}
 
-    public String getSubjectTime() {
-        return SubjectTime;
-    }
+	public String getSubjectTime() {
+		return SubjectTime;
+	}
 }

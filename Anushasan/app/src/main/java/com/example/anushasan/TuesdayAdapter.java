@@ -12,65 +12,65 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class TuesdayAdapter extends RecyclerView.Adapter<TuesdayAdapter.TuesdayViewHolder> {
 
-    private Context mContext;
-    private Cursor mCursor;
+	private Context mContext;
+	private Cursor mCursor;
 
-    public TuesdayAdapter(Context context, Cursor cursor){
-        mContext = context;
-        mCursor = cursor;
-    }
+	public TuesdayAdapter(Context context, Cursor cursor) {
+		mContext = context;
+		mCursor = cursor;
+	}
 
-    public class TuesdayViewHolder extends RecyclerView.ViewHolder{
+	@NonNull
+	@Override
+	public TuesdayViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+		LayoutInflater inflater = LayoutInflater.from(mContext);
+		View view = inflater.inflate(R.layout.tues_card, parent, false);
+		return new TuesdayViewHolder(view);
+	}
 
-        public TextView nameText;
-        public TextView timeText;
+	@Override
+	public void onBindViewHolder(@NonNull TuesdayViewHolder holder, int position) {
 
-        public TuesdayViewHolder(@NonNull View itemView) {
-            super(itemView);
+		if (!mCursor.moveToPosition(position)) {
+			return;
+		}
 
-            nameText = itemView.findViewById(R.id.tues_name_item);
-            timeText = itemView.findViewById(R.id.tues_time_item);
-        }
-    }
+		String name = mCursor.getString(mCursor.getColumnIndex(TuesdayContract.SubjectEntry.COLUMN_NAME));
+		String time = mCursor.getString(mCursor.getColumnIndex(TuesdayContract.SubjectEntry.COLUMN_TIME));
+		int id = mCursor.getInt(mCursor.getColumnIndex(TuesdayContract.SubjectEntry._ID));
 
-    @NonNull
-    @Override
-    public TuesdayViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(mContext);
-        View view = inflater.inflate(R.layout.tues_card , parent, false);
-        return new TuesdayViewHolder(view);
-    }
+		holder.nameText.setText(name);
+		holder.timeText.setText(time);
+		holder.itemView.setTag(id);
+	}
 
-    @Override
-    public void onBindViewHolder(@NonNull TuesdayViewHolder holder, int position) {
+	@Override
+	public int getItemCount() {
+		return mCursor.getCount();
+	}
 
-        if(!mCursor.moveToPosition(position)){
-            return;
-        }
+	public void swapCursor(Cursor newCursor) {
+		if (mCursor != null) {
+			mCursor.close();
+		}
 
-        String name = mCursor.getString(mCursor.getColumnIndex(TuesdayContract.SubjectEntry.COLUMN_NAME));
-        String time = mCursor.getString(mCursor.getColumnIndex(TuesdayContract.SubjectEntry.COLUMN_TIME));
-         int id=mCursor.getInt(mCursor.getColumnIndex(TuesdayContract.SubjectEntry._ID));
+		mCursor = newCursor;
 
-        holder.nameText.setText(name);
-        holder.timeText.setText(time);
-        holder.itemView.setTag(id);
-    }
+		if (newCursor != null) {
+			notifyDataSetChanged();
+		}
+	}
 
-    @Override
-    public int getItemCount() {
-        return mCursor.getCount();
-    }
+	public class TuesdayViewHolder extends RecyclerView.ViewHolder {
 
-    public void swapCursor(Cursor newCursor){
-        if(mCursor!=null){
-            mCursor.close();
-        }
+		public TextView nameText;
+		public TextView timeText;
 
-        mCursor = newCursor;
+		public TuesdayViewHolder(@NonNull View itemView) {
+			super(itemView);
 
-        if(newCursor!=null){
-            notifyDataSetChanged();
-        }
-    }
+			nameText = itemView.findViewById(R.id.tues_name_item);
+			timeText = itemView.findViewById(R.id.tues_time_item);
+		}
+	}
 }

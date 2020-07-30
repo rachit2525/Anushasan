@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,42 +7,42 @@
     tools:context=".TuesdayActivity">
 
     <EditText
+        android:id="@+id/tues_sub_name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tues_sub_name" />
+        android:layout_height="wrap_content" />
 
     <TextView
+        android:id="@+id/tues_sub_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0:00"
-        android:textSize="50sp"
-        android:id="@+id/tues_sub_time"
         android:layout_below="@+id/tues_sub_name"
-        android:layout_margin="8dp" />
+        android:layout_margin="8dp"
+        android:text="0:00"
+        android:textSize="50sp" />
 
     <Button
+        android:id="@+id/tues_timePick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Time"
-        android:id="@+id/tues_timePick"
         android:layout_below="@+id/tues_sub_name"
         android:layout_centerHorizontal="true"
-        android:layout_margin="8dp" />
+        android:layout_margin="8dp"
+        android:text="Time" />
 
     <Button
+        android:id="@+id/tues_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ADD"
-        android:id="@+id/tues_add"
-        android:layout_toEndOf="@+id/tues_timePick"
         android:layout_below="@+id/tues_sub_name"
-        android:layout_margin="8dp" />
+        android:layout_margin="8dp"
+        android:layout_toEndOf="@+id/tues_timePick"
+        android:text="ADD" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tues_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/tues_recyclerView"
-        android:layout_below="@+id/tues_sub_time"/>
+        android:layout_below="@+id/tues_sub_time" />
 
 
 </RelativeLayout>

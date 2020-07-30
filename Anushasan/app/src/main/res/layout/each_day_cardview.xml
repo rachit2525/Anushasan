@@ -1,32 +1,30 @@
-<androidx.cardview.widget.CardView android:layout_height="wrap_content"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/colorAccent"
-    android:elevation="10dp"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
+    android:elevation="10dp">
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
         <com.example.anushasan.utility.LetterImageView
+            android:id="@+id/days_LetterImageView"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:id="@+id/days_LetterImageView"
-            android:layout_margin="10dp"
-            />
+            android:layout_margin="10dp" />
 
         <TextView
+            android:id="@+id/days_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/days_textView"
-            android:textStyle="bold"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="6dp"
             android:layout_marginTop="6dp"
-            android:layout_centerVertical="true"
-            android:text="MONDAY"
             android:layout_toRightOf="@+id/days_LetterImageView"
+            android:text="MONDAY"
             android:textSize="36sp"
-            />
+            android:textStyle="bold" />
 
     </RelativeLayout>
 

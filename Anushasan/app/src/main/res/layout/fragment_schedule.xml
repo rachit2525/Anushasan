@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@android:color/background_light">
 
     <ListView
+        android:id="@+id/schedule_listView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/schedule_listView"
-        android:padding="10dp"
         android:background="@color/cardview_light_background"
-        android:scrollbars="vertical"
-
+        android:divider="@null"
         android:dividerHeight="10dp"
-        android:divider="@null">
+
+        android:padding="10dp"
+        android:scrollbars="vertical">
 
     </ListView>
 
